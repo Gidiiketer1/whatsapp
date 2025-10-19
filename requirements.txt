@@ -1,8 +1,8 @@
-# WhatsApp Clone - Python Dependencies (if using Python backend)
+# WhatsApp Clone - Python Dependencies
 # This file is for Python dependencies only
 # For Node.js dependencies, see package.json files in server/ and client/ directories
 
-# If you're using Python for any part of the backend:
+# Python packages (if using Python for any backend utilities)
 flask==2.3.3
 flask-cors==4.0.0
 pymongo==4.5.0
@@ -11,19 +11,6 @@ pyjwt==2.8.0
 bcrypt==4.0.1
 requests==2.31.0
 
-# =============================================================================
-# INSTALLATION INSTRUCTIONS
-# =============================================================================
-# For Python dependencies:
-# pip install -r requirements.txt
-
-# For Node.js dependencies, see NODE_DEPENDENCIES.md
-# This WhatsApp clone is primarily a Node.js application
-# Python dependencies are optional for any Python utilities
-
-# =============================================================================
-# NOTE
-# =============================================================================
-# This is a Node.js/React application
-# The main dependencies are in package.json files
-# See NODE_DEPENDENCIES.md for complete setup instructions
+# Installation: pip install -r requirements.txt
+# Note: This is primarily a Node.js application
+# See NODE_DEPENDENCIES.md for Node.js setup instructions
