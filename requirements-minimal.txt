@@ -1,0 +1,10 @@
+# Minimal Python requirements for WhatsApp Clone
+# Use this if the main requirements.txt fails
+
+flask
+flask-cors
+pymongo
+python-dotenv
+pyjwt
+bcrypt
+requests

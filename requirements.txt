@@ -3,13 +3,13 @@
 # For Node.js dependencies, see package.json files in server/ and client/ directories
 
 # Python packages (if using Python for any backend utilities)
-flask==2.3.3
-flask-cors==4.0.0
-pymongo==4.5.0
-python-dotenv==1.0.0
-pyjwt==2.8.0
-bcrypt==4.0.1
-requests==2.31.0
+flask>=2.3.0,<3.0.0
+flask-cors>=4.0.0,<5.0.0
+pymongo>=4.5.0,<5.0.0
+python-dotenv>=1.0.0,<2.0.0
+pyjwt>=2.8.0,<3.0.0
+bcrypt>=4.0.0,<5.0.0
+requests>=2.31.0,<3.0.0
 
 # Installation: pip install -r requirements.txt
 # Note: This is primarily a Node.js application
