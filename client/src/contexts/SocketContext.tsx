@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from 'react';
 import { io, Socket } from 'socket.io-client';
 import { useAuth } from './AuthContext';
 
@@ -41,24 +47,24 @@ export const SocketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (user) {
       const newSocket = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000', {
         auth: {
-          token: localStorage.getItem('token')
-        }
+          token: localStorage.getItem('token'),
+        },
       });
 
       newSocket.on('connect', () => {
-        console.log('Connected to server');
+        console.log('✅ Connected to server');
         setIsConnected(true);
         // Join user's personal room
         newSocket.emit('join', user.id);
       });
 
       newSocket.on('disconnect', () => {
-        console.log('Disconnected from server');
+        console.log('🔌 Disconnected from server');
         setIsConnected(false);
       });
 
       newSocket.on('connect_error', (error) => {
-        console.error('Connection error:', error);
+        console.error('❌ Connection error:', error);
         setIsConnected(false);
       });
 
@@ -82,7 +88,7 @@ export const SocketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         chatId,
         senderId: user.id,
         content,
-        type
+        type,
       });
     }
   };
@@ -95,7 +101,9 @@ export const SocketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const leaveChat = (chatId: string) => {
     if (socket) {
-      socket.leave(chatId);
+      // ❌ Don't use socket.leave() — it doesn't exist on the client
+      // ✅ Instead, emit a custom event to the server
+      socket.emit('leaveRoom', chatId);
     }
   };
 
@@ -118,14 +126,10 @@ export const SocketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     joinChat,
     leaveChat,
     onReceiveMessage,
-    offReceiveMessage
+    offReceiveMessage,
   };
 
-  return (
-    <SocketContext.Provider value={value}>
-      {children}
-    </SocketContext.Provider>
-  );
+  return <SocketContext.Provider value={value}>{children}</SocketContext.Provider>;
 };
 
 export const useSocket = () => {
@@ -135,4 +139,3 @@ export const useSocket = () => {
   }
   return context;
 };
-

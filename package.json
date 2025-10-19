@@ -14,11 +14,20 @@
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
     "start": "npm run app"
   },
-  "keywords": ["whatsapp", "messaging", "react", "nodejs", "socket.io"],
+  "keywords": [
+    "whatsapp",
+    "messaging",
+    "react",
+    "nodejs",
+    "socket.io"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1"
   }
 }
-
