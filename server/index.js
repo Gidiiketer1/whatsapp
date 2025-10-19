@@ -3,7 +3,18 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const http = require('http');
 const socketIo = require('socket.io');
-require('dotenv').config();
+const path = require('path');
+const fs = require('fs');
+
+// Load APP environment configuration
+const appEnvPath = path.join(__dirname, 'config', 'app.env');
+if (fs.existsSync(appEnvPath)) {
+  require('dotenv').config({ path: appEnvPath });
+  console.log('📁 Loaded APP environment configuration');
+} else {
+  require('dotenv').config();
+  console.log('📁 Using default environment configuration');
+}
 
 const authRoutes = require('./routes/auth');
 const chatRoutes = require('./routes/chat');
