@@ -1,0 +1,138 @@
+# WhatsApp Clone - Full Stack Dependencies
+# This file contains all the dependencies needed to run the WhatsApp clone application
+
+# =============================================================================
+# SYSTEM REQUIREMENTS
+# =============================================================================
+# Node.js (v14 or higher) - https://nodejs.org/
+# MongoDB (local or Atlas) - https://www.mongodb.com/
+# npm or yarn package manager
+
+# =============================================================================
+# BACKEND DEPENDENCIES (server/package.json)
+# =============================================================================
+# Core Framework
+express==4.18.2
+mongoose==8.0.3
+socket.io==4.7.4
+
+# Authentication & Security
+jsonwebtoken==9.0.2
+bcryptjs==2.4.3
+cors==2.8.5
+
+# Environment & Configuration
+dotenv==16.3.1
+
+# File Upload
+multer==1.4.5-lts.1
+
+# Validation
+express-validator==7.0.1
+
+# Development Dependencies
+nodemon==3.0.2
+
+# =============================================================================
+# FRONTEND DEPENDENCIES (client/package.json)
+# =============================================================================
+# React Core
+react==18.2.0
+react-dom==18.2.0
+react-router-dom==6.20.1
+
+# Real-time Communication
+socket.io-client==4.7.4
+
+# HTTP Client
+axios==1.6.2
+
+# TypeScript Support
+typescript==4.9.5
+@types/react==18.2.42
+@types/react-dom==18.2.17
+@types/node==16.18.68
+@types/jest==27.5.2
+@types/socket.io-client==3.0.0
+
+# Testing
+@testing-library/jest-dom==5.17.0
+@testing-library/react==13.4.0
+@testing-library/user-event==14.5.2
+
+# Build Tools
+react-scripts==5.0.1
+web-vitals==2.1.4
+
+# =============================================================================
+# ROOT PROJECT DEPENDENCIES (package.json)
+# =============================================================================
+# Development Tools
+concurrently==8.2.2
+
+# =============================================================================
+# INSTALLATION INSTRUCTIONS
+# =============================================================================
+# 1. Install Node.js from https://nodejs.org/ (LTS version recommended)
+# 2. Install MongoDB locally or use MongoDB Atlas (cloud)
+# 3. Run the following commands:
+
+# Install all dependencies:
+# npm run install-all
+
+# Or install manually:
+# cd server && npm install
+# cd ../client && npm install
+# cd .. && npm install
+
+# =============================================================================
+# ENVIRONMENT SETUP
+# =============================================================================
+# Create server/.env file:
+# PORT=5000
+# MONGODB_URI=mongodb://localhost:27017/whatsapp-clone
+# JWT_SECRET=your_jwt_secret_key_here
+# NODE_ENV=development
+
+# Create client/.env file:
+# REACT_APP_API_URL=http://localhost:5000/api
+# REACT_APP_SOCKET_URL=http://localhost:5000
+
+# =============================================================================
+# RUNNING THE APPLICATION
+# =============================================================================
+# Start both servers:
+# npm run dev
+
+# Or start separately:
+# Backend: cd server && npm run dev
+# Frontend: cd client && npm start
+
+# =============================================================================
+# ACCESS POINTS
+# =============================================================================
+# Frontend: http://localhost:3000
+# Backend API: http://localhost:5000
+# API Documentation: http://localhost:5000/api
+
+# =============================================================================
+# MONGODB SETUP OPTIONS
+# =============================================================================
+# Option 1: Local MongoDB
+# - Download from https://www.mongodb.com/try/download/community
+# - Install and start MongoDB service
+# - Use: mongodb://localhost:27017/whatsapp-clone
+
+# Option 2: MongoDB Atlas (Cloud)
+# - Go to https://www.mongodb.com/atlas
+# - Create free account and cluster
+# - Get connection string
+# - Use: mongodb+srv://username:password@cluster.mongodb.net/whatsapp-clone
+
+# =============================================================================
+# TROUBLESHOOTING
+# =============================================================================
+# - If ports are busy, change PORT in server/.env
+# - If MongoDB connection fails, check if MongoDB is running
+# - If dependencies fail, delete node_modules and run npm install
+# - Make sure to restart terminal after installing Node.js
